@@ -1,0 +1,209 @@
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-08-27 20:48:28) [GET]
+Rendering template within layouts/application
+Rendering site/index
+Completed in 44ms (View: 42, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-27 21:18:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  app/controllers/users_controller.rb:3:in `new'
+  app/controllers/users_controller.rb:3:in `new'
+
+Rendered rescues/_trace (43.3ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090828031700)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "password_hash" varchar(255), "password_salt" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090828031700')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090828031700)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-27 21:21:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 445ms (View: 438, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-27 21:22:00) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "username"=>"woody2shoes", "password"=>"[FILTERED]", "email"=>"chuck@lostjungles.com"}, "commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"GNmT8APIRycTWOItl5P8Bd386Ez1IHcwwVZ+9hHJlC0=", "controller"=>"users"}
+  [4;36;1mUser Exists (1.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'woody2shoes') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'chuck@lostjungles.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("updated_at", "username", "password_salt", "password_hash", "email", "created_at") VALUES('2009-08-28 03:22:00', 'woody2shoes', '82c0bf4e2e1aaa1e5043b80eccb255a76925b65d', 'bdfa4c2fadc521122bd887cc72caa23afc1b3097', 'chuck@lostjungles.com', '2009-08-28 03:22:00')[0m
+Redirected to http://localhost:3000/
+Completed in 59ms (DB: 2) | 302 Found [http://localhost/users]
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-08-27 21:22:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"site"}
+Rendering template within layouts/application
+Rendering site/index
+Completed in 30ms (View: 28, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-08-27 21:22:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-08-27 21:22:18) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"GNmT8APIRycTWOItl5P8Bd386Ez1IHcwwVZ+9hHJlC0=", "controller"=>"sessions", "login"=>"woody2shoes", "password"=>"[FILTERED]"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'woody2shoes') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 45ms (DB: 1) | 302 Found [http://localhost/sessions]
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-08-27 21:22:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"site"}
+Rendering template within layouts/application
+Rendering site/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2009-08-27 21:35:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"recipes"}
+  [4;36;1mRecipe Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: recipes: SELECT * FROM "recipes" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: recipes: SELECT * FROM "recipes" ):
+  app/controllers/recipes_controller.rb:3:in `index'
+
+Rendered rescues/_trace (45.1ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090828031700)
+Migrating to CreateRecipes (20090828033443)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "directions" text, "author_id" integer, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090828033443')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("recipes")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2009-08-27 21:35:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"recipes"}
+  [4;36;1mRecipe Load (0.5ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/application
+Rendering recipes/index
+Completed in 356ms (View: 351, DB: 1) | 200 OK [http://localhost/recipes]
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2009-08-27 21:35:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"recipes"}
+Rendering template within layouts/application
+Rendering recipes/new
+
+ActionView::TemplateError (undefined method `author' for #<Recipe:0x25a3b18>) on line #9 of app/views/recipes/_form.html.erb:
+6:   </p>
+7:   <p>
+8:     <%= f.label :author %><br />
+9:     <%= f.text_field :author %>
+10:   </p>
+11:   <p>
+12:     <%= f.label :title %><br />
+
+    app/views/recipes/_form.html.erb:9
+    app/views/recipes/_form.html.erb:1
+    app/views/recipes/new.html.erb:3
+
+Rendered rescues/_trace (68.2ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2009-08-27 21:44:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"recipes"}
+Rendering template within layouts/application
+Rendering recipes/new
+Rendered recipes/_form (5.2ms)
+Completed in 115ms (View: 85, DB: 0) | 200 OK [http://localhost/recipes/new]
+
+
+Processing RecipesController#create (for 127.0.0.1 at 2009-08-27 21:47:03) [POST]
+  Parameters: {"commit"=>"Submit", "action"=>"create", "authenticity_token"=>"GNmT8APIRycTWOItl5P8Bd386Ez1IHcwwVZ+9hHJlC0=", "controller"=>"recipes", "recipe"=>{"title"=>"Cereal", "directions"=>"Pour in milk and enjoy with a spoon", "author"=>"woody2shoes"}}
+
+ActiveRecord::AssociationTypeMismatch (User(#19584650) expected, got String(#113650)):
+  app/controllers/recipes_controller.rb:15:in `new'
+  app/controllers/recipes_controller.rb:15:in `create'
+
+Rendered rescues/_trace (47.4ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecipesController#create (for 127.0.0.1 at 2009-08-27 21:49:42) [POST]
+  Parameters: {"commit"=>"Submit", "action"=>"create", "authenticity_token"=>"GNmT8APIRycTWOItl5P8Bd386Ez1IHcwwVZ+9hHJlC0=", "controller"=>"recipes", "recipe"=>{"title"=>"Cereal", "directions"=>"Pour in milk and enjoy with a spoon", "author"=>"1"}}
+
+ActiveRecord::AssociationTypeMismatch (User(#18928940) expected, got String(#113650)):
+  app/controllers/recipes_controller.rb:15:in `new'
+  app/controllers/recipes_controller.rb:15:in `create'
+
+Rendered rescues/_trace (118.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: author_id
+  [4;35;1mRecipe Create (0.6ms)[0m   [0mINSERT INTO "recipes" ("updated_at", "directions", "title", "author_id", "created_at") VALUES('2009-08-28 03:59:20', NULL, NULL, NULL, '2009-08-28 03:59:20')[0m
+  [4;36;1mRecipe Load (0.5ms)[0m   [0;1mSELECT * FROM "recipes" LIMIT 1[0m
+  [4;35;1mRecipe Update (0.4ms)[0m   [0mUPDATE "recipes" SET "author_id" = 1, "updated_at" = '2009-08-28 03:59:46' WHERE "id" = 1[0m
+WARNING: Can't mass-assign these protected attributes: author_id
+  [4;36;1mRecipe Create (0.5ms)[0m   [0;1mINSERT INTO "recipes" ("updated_at", "directions", "title", "author_id", "created_at") VALUES('2009-08-28 04:00:05', NULL, NULL, NULL, '2009-08-28 04:00:05')[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" LIMIT 1[0m
+  [4;36;1mRecipe Create (1.0ms)[0m   [0;1mINSERT INTO "recipes" ("updated_at", "directions", "title", "author_id", "created_at") VALUES('2009-08-28 04:00:19', NULL, NULL, 1, '2009-08-28 04:00:19')[0m

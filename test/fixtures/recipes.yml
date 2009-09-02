@@ -1,0 +1,9 @@
+one:
+  directions: MyText
+  author: 
+  title: MyString
+
+two:
+  directions: MyText
+  author: 
+  title: MyString

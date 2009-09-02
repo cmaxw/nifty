@@ -1,0 +1,21 @@
+<% title "Recipes" %>
+
+<table>
+  <tr>
+    <th>Directions</th>
+    <th>Author</th>
+    <th>Title</th>
+  </tr>
+  <% for recipe in @recipes %>
+    <tr>
+      <td><%=h recipe.directions %></td>
+      <td><%=h recipe.author %></td>
+      <td><%=h recipe.title %></td>
+      <td><%= link_to "Show", recipe %></td>
+      <td><%= link_to "Edit", edit_recipe_path(recipe) %></td>
+      <td><%= link_to "Destroy", recipe, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Recipe", new_recipe_path %></p>
